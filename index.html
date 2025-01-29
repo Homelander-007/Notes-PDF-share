@@ -29,7 +29,7 @@
         <div class="gola">
             <h1>Share on :-</h1>
             <div class="con">
-            <a href="mailto:karamveersinghisking@gmail.com?subject=Kia%20kaam%20hai?%20&body=Sir%20mai%20aapko%20notes%20dena%20chahta%20hu"><img src="mail.png" alt=""></a>
+            <a id="dynamicLink" href="https://mail.google.com/mail/?view=cm&fs=1&to=karamveersinghisking@gmail.com?subject=Kia%20kaam%20hai?%20&body=Sir%20mai%20aapko%20notes%20dena%20chahta%20hu"><img src="mail.png" alt=""></a>
             <a href="https://t.me/Birbal_007"><img src="tele.png" alt=""></a>
             </div>
         </div>
@@ -37,5 +37,19 @@
     <footer>
         <p>&copy; 2024 Site for notes</p>
     </footer>
+    
+    <script>
+        function updateLink() {
+            let link = document.getElementById("dynamicLink");
+
+            if (window.matchMedia("(max-width: 550px)").matches) {
+                link.href = "mailto:karamveersinghisking@gmail.com?subject=Kia%20kaam%20hai?%20&body=Sir%20mai%20aapko%20notes%20dena%20chahta%20hu"; // Mobile version ka link
+            } else {
+                link.href = "https://mail.google.com/mail/?view=cm&fs=1&to=karamveersinghisking@gmail.com?subject=Kia%20kaam%20hai?%20&body=Sir%20mai%20aapko%20notes%20dena%20chahta%20hu"; // Desktop version ka link
+            }
+        }
+        updateLink();
+        window.addEventListener("resize", updateLink);
+    </script>
 </body>
 </html>
